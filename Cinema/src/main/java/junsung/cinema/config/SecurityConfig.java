@@ -20,21 +20,19 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable())
-                .sessionManagement(session ->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authorizeHttpRequests(auth->auth
-                        .requestMatchers("/auth/**").permitAll()
+                .csrf(csrf -> csrf.disable()) // CSRF 보호 해제
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/auth/**", "/h2-console/**").permitAll() // H2 Console 접근 허용
                         .anyRequest().authenticated())
+                .headers(headers -> headers.frameOptions(frame -> frame.disable())) // H2 Console을 위한 프레임 옵션 해제
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
-    return http.build();
+
+        return http.build();
     }
 
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-
-
-
 }
