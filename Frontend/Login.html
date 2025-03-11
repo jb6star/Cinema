@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<title>Login</title>
+<style>
+
+  table {
+    display: block;  
+    position: absolute; /* 화면에서 원하는 위치로 이동 가능하도록 설정 */
+    top: 40%;  
+    left: 50%;  
+    transform: translate(-50%, -50%); /* 요소의 중심을 정확히 화면 중앙에 배치 */
+    width: 280px;
+    height: 250px;
+    font-size: 15px;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: 250px;
+    height: 35px;
+    margin: 5px 0px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);
+  }
+
+  .btn {
+    width: 263px;
+    height: 35px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(164, 199, 255);
+  }
+
+  .btn:active {
+    width: 263px;
+    height: 35px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(61, 135, 255);
+  }
+
+  a {
+    font-size: 12px;
+    color: darkgray;
+    text-decoration-line: none;
+  }
+
+  /* 로그인 글씨 가운데 정렬 */
+  h2 {
+    text-align: center;
+    font-family: 'Bebas neue';
+    font-size: 45px;
+    margin: 10px;
+  }
+
+  .signup {
+    text-align: center;
+  }
+  
+  #logindata{
+    margin: 10px;
+  }
+
+</style>
+</head>
+
+<body>
+<form>
+  <table>
+    <tr>
+      <td>
+        <h2>CINEMA</h2>
+      </td>
+    </tr>
+    <tr>
+      <td><input type="text" placeholder="ID"></td>
+    </tr>
+    <tr>
+      <td><input type="password" placeholder=Password></td>
+    </tr>
+    <tr>
+      <td><input id="logindata"type="checkbox"> 로그인 정보 저장</td>
+    </tr>
+    <tr>
+      <td><input type="submit" value="Sign in" class="btn" onclick="alert('로그인 성공!')"></td>
+    </tr>
+    <tr>
+      <td class="signup"><a href="Signup.html">회원가입</a></td>
+    </tr>
+  </table>
+</form>
+</body>
+
+</html>
