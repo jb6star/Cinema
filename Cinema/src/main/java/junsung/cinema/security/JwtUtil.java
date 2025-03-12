@@ -25,7 +25,7 @@ public class JwtUtil {
                 .signWith(getSigningKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
-
+//============================로그인 후 필요한 메서드 =====================
     public String validateToken(String token){ //얜 JWT 객체가 존재하는지의 검증
         try{
             return Jwts.parser()
